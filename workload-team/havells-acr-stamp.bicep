@@ -188,7 +188,7 @@ resource acrAks 'Microsoft.ContainerRegistry/registries@2023-07-01' = {
     }
     dataEndpointEnabled: true
     networkRuleBypassOptions: 'AzureServices'
-    zoneRedundancy: 'Enabled'
+    zoneRedundancy: 'disabled'
   }
 
   // resource acrReplication 'replications@2021-09-01' = {
