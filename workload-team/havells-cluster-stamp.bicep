@@ -741,15 +741,15 @@ resource acrKubeletAcrPullRole_roleAssignment 'Microsoft.Authorization/roleAssig
 }
 
 // Grant the Azure Monitor (fka as OMS) Agent's Managed Identity the metrics publisher role to push alerts
-resource mcAmaAgentMonitoringMetricsPublisherRole_roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  scope: mc
-  name: guid(mc.id, 'amagent', monitoringMetricsPublisherRole.id)
-  properties: {
-    roleDefinitionId: monitoringMetricsPublisherRole.id
-    principalId: mc.properties.addonProfiles.omsagent.identity.objectId
-    principalType: 'ServicePrincipal'
-  }
-}
+// resource mcAmaAgentMonitoringMetricsPublisherRole_roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+//   scope: mc
+//   name: guid(mc.id, 'amagent', monitoringMetricsPublisherRole.id)
+//   properties: {
+//     roleDefinitionId: monitoringMetricsPublisherRole.id
+//     principalId: mc.properties.addonProfiles.omsagent.identity.objectId
+//     principalType: 'ServicePrincipal'
+//   }
+// }
 
 resource mcMicrosoftEntraAdminGroupClusterAdminRole_roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = if (isUsingAzureRBACasKubernetesRBAC) {
   scope: mc
