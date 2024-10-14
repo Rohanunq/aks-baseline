@@ -259,7 +259,7 @@ resource podmiIngressController 'Microsoft.ManagedIdentity/userAssignedIdentitie
 }
 
 resource kv 'Microsoft.KeyVault/vaults@2023-07-01' = {
-  name: 'kv1-${clusterName}'
+  name: 'kv2-${clusterName}'
   location: location
   properties: {
     accessPolicies: [] // Azure RBAC is used instead
