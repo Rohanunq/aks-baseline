@@ -16,6 +16,6 @@ param aksIngressControllerCertificate = '[base64 public cert data]'
 
 param clusterAuthorizedIPRanges = '[array of IP ranges, like [\'168.196.25.0/24\',\'73.140.245.0/28\', AzureFirewallIP/32] ]'
 
-param domainName = '[the value of DOMAIN_NAME_AKS_BASELINE (e.g. contoso.com)]'
+param domainName = '[the value of DOMAIN_NAME_AKS_BASELINE (e.g. havellsaksbaseline.com)]'
 
 param gitOpsBootstrappingRepoHttpsUrl = 'https://github.com/mspnp/aks-baseline'

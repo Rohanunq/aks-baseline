@@ -29,7 +29,7 @@ param clusterAuthorizedIPRanges array = []
 param location string = resourceGroup().location
 
 @description('Domain name to use for App Gateway and AKS ingress.')
-param domainName string = 'contoso.com'
+param domainName string = 'havellsaksbaseline.com'
 
 @description('Your cluster will be bootstrapped from this git repo.')
 @minLength(9)

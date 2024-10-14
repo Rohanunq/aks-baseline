@@ -10,7 +10,7 @@ The AKS cluster has been [bootstrapped](./07-bootstrap-validation.md), wrapping 
 
 1. Obtain the Azure Key Vault details, then give the current user the permissions and network access to import certificates.
 
-   > :book: The workload team decides to use a wildcard certificate of `*.aks-ingress.contoso.com` for the ingress controller. They use Azure Key Vault to import and manage the lifecycle of this certificate.
+   > :book: The workload team decides to use a wildcard certificate of `*.aks-ingress.havellsaksbaseline.com` for the ingress controller. They use Azure Key Vault to import and manage the lifecycle of this certificate.
 
    ```bash
    export KEYVAULT_NAME_AKS_BASELINE=$(az deployment group show --resource-group rg-bu0001a0008 -n cluster-stamp --query properties.outputs.keyVaultName.value -o tsv)
@@ -25,7 +25,7 @@ The AKS cluster has been [bootstrapped](./07-bootstrap-validation.md), wrapping 
    az keyvault network-rule add -n $KEYVAULT_NAME_AKS_BASELINE --ip-address ${CURRENT_IP_ADDRESS}
    ```
 
-1. Import the AKS ingress controller's wildcard certificate for `*.aks-ingress.contoso.com`.
+1. Import the AKS ingress controller's wildcard certificate for `*.aks-ingress.havellsaksbaseline.com`.
 
    :warning: If you already have access to an [appropriate certificate](https://learn.microsoft.com/azure/key-vault/certificates/certificate-scenarios#formats-of-import-we-support), or can procure one from your organization, consider using it for this step. For more information, take a look at the [import certificate tutorial using Azure Key Vault](https://learn.microsoft.com/azure/key-vault/certificates/tutorial-import-certificate#import-a-certificate-to-key-vault).
 

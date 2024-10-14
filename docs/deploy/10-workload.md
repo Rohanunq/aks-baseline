@@ -6,16 +6,16 @@ The cluster now has an [Traefik configured with a TLS certificate](./09-secret-m
 
 > :book: The Contoso workload team is about to conclude this journey, but they need an app to test their new infrastructure. For this task they've picked out the venerable [ASP.NET Core Docker sample web app](https://github.com/dotnet/dotnet-docker/tree/main/samples/aspnetapp).
 
-1. Customize the host name of the Ingress resource to match your custom domain. *(You can skip this step if domain was left as contoso.com.)*
+1. Customize the host name of the Ingress resource to match your custom domain. *(You can skip this step if domain was left as havellsaksbaseline.com.)*
 
    ```bash
-   sed -i "s/contoso.com/${DOMAIN_NAME_AKS_BASELINE}/" workload/aspnetapp-ingress-patch.yaml
+   sed -i "s/havellsaksbaseline.com/${DOMAIN_NAME_AKS_BASELINE}/" workload/aspnetapp-ingress-patch.yaml
    ```
 
    Note, that if you are on macOS, you might need to use the following command instead:
 
    ```bash
-   sed -i '' 's/contoso.com/'"${DOMAIN_NAME_AKS_BASELINE}"'/g' workload/aspnetapp-ingress-patch.yaml
+   sed -i '' 's/havellsaksbaseline.com/'"${DOMAIN_NAME_AKS_BASELINE}"'/g' workload/aspnetapp-ingress-patch.yaml
    ```
 
 1. Deploy the ASP.NET Core Docker sample web app

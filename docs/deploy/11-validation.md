@@ -31,10 +31,10 @@ This section will help you to validate the workload is exposed correctly and res
    For example, your hosts file edit might look similar to this:
 
    ```
-   50.140.130.120   bicycle.contoso.com
+   50.140.130.120   bicycle.havellsaksbaseline.com
    ```
 
-1. Browse to the site (<https://bicycle.contoso.com>).
+1. Browse to the site (<https://bicycle.havellsaksbaseline.com>).
 
    > :bulb: Remember to include the protocol prefix `https://` in the URL you type in the address bar of your browser. A TLS warning will be present due to using a self-signed certificate. You can ignore it or import the self-signed cert (`appgw.pfx`) to your user's trusted root store.
 
@@ -92,7 +92,7 @@ Built-in as well as custom policies are applied to the cluster as part of the [c
 2. Inspect the error message and remark that Gatekeeper's admission webhook rejects `bu0001a0008-00.aks-ingress.invalid-domain.com` as incompliant host.
 
    ```output
-   Error from server (Forbidden): error when creating "STDIN": admission webhook "validation.gatekeeper.sh" denied the request: [azurepolicy-k8scustomingresstlshostshavede-e64871e795ce3239cd99] TLS host must have one of defined domain suffixes. Valid domain names are ["contoso.com"]; defined TLS hosts are {"bu0001a0008-00.aks-ingress.invalid-domain.com"}; incompliant hosts are {"bu0001a0008-00.aks-ingress.invalid-domain.com"}.
+   Error from server (Forbidden): error when creating "STDIN": admission webhook "validation.gatekeeper.sh" denied the request: [azurepolicy-k8scustomingresstlshostshavede-e64871e795ce3239cd99] TLS host must have one of defined domain suffixes. Valid domain names are ["havellsaksbaseline.com"]; defined TLS hosts are {"bu0001a0008-00.aks-ingress.invalid-domain.com"}; incompliant hosts are {"bu0001a0008-00.aks-ingress.invalid-domain.com"}.
    ```
 
 ## Validate web application firewall functionality
@@ -103,7 +103,7 @@ Your workload is placed behind a Web Application Firewall (WAF), which has rules
 
 ### Steps
 
-1. Browse to the site with the following appended to the URL: `?sql=DELETE%20FROM` (such as <https://bicycle.contoso.com/?sql=DELETE%20FROM>).
+1. Browse to the site with the following appended to the URL: `?sql=DELETE%20FROM` (such as <https://bicycle.havellsaksbaseline.com/?sql=DELETE%20FROM>).
 1. Observe that your request was blocked by Application Gateway's WAF rules and your workload never saw this potentially dangerous request.
 1. Blocked requests (along with other gateway data) will be visible in the attached Log Analytics workspace.
 
